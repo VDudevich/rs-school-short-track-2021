@@ -12,7 +12,7 @@ insert_final_newline = true
 quote_type = single
 
 [*.md]
-trim_trailing_whitespace = false
+trim_trailing_whitespace = true
 
 [*.json]
 insert_final_newline = false
