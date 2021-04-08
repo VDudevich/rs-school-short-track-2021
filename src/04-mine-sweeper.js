@@ -59,7 +59,6 @@ function minesweeper(matrix) {
     }
     result.push(temp);
   }
-  console.log(result);
   return result;
 }
 
