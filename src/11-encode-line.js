@@ -13,24 +13,20 @@ function encodeLine(str) {
   let temp = '';
   let k;
   let count = 1;
-  for (let i = 1; i < str.length; i++) {
-    k = i;
+  for (let i = 0; i < str.length; i++) {
+    k = i + 1;
     while (str[k] === str[k - 1]) {
       count += 1;
       temp = `${count}${str[k]}`;
       k += 1;
     }
-    if (temp === '' && i === str.length - 1) {
-      output += str[i - 1] + str[i];
-    } else if (temp === '' && i === 2) {
-      output += str[i - 1];
-    } else if (temp === '') {
+    if (temp === '') {
       output += str[i];
     } else {
       output += temp;
       temp = '';
-      i = k;
     }
+    i = k - 1;
     count = 1;
   }
   return output;

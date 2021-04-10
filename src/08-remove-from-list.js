@@ -11,14 +11,29 @@
  * the output should be [1, 2, 4, 5]
  *
  * Singly - linked lists are already defined with this interface
- * function ListNode(x) {
+ * function resultList(x) {
  *   this.value = x;
  *   this.next = null;
  * }
  */
 
-function removeKFromList(/* l, k */) {
-  throw new Error('Not implemented');
+function removeKFromList(l, k) {
+  let resultList = l;
+  while (resultList.value === k && resultList.next) {
+    resultList = resultList.next;
+  }
+  let currentNode = resultList;
+  while (currentNode.next) {
+    if (currentNode.next.value === k) {
+      currentNode.next = currentNode.next.next;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
+  if (resultList.value === k && resultList.next === null) {
+    return null;
+  }
+  return resultList;
 }
 
 module.exports = removeKFromList;
